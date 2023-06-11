@@ -7,7 +7,6 @@ import { galleryItems } from './gallery-items.js';
 const listGalaryContainer = document.querySelector(".gallery");
 const listItems = createListElementsGalery(galleryItems);
 
-
 listGalaryContainer.insertAdjacentHTML("beforeend", listItems);
 
 listGalaryContainer.addEventListener("click", handleGalleryContainerClick)
@@ -24,7 +23,6 @@ function createListElementsGalery(items) {
 }).join("");
 }
 
-
 function handleGalleryContainerClick(event) {
     event.preventDefault();
 
@@ -33,23 +31,11 @@ function handleGalleryContainerClick(event) {
     if (!isGalleryImageEl) {
         return
     }
-
-
-    var lightbox = new SimpleLightbox('.gallery a', { 
-        captionsDelay: 250,
-        // cationsData,
-     });
-
-    // var lightbox = $('.gallery a').simpleLightbox({ /* options */ });
-
-
-    // const instance = basicLightbox.create(`
-    // <img src="${event.target.dataset.source}" width="800" height="600">`)
-
-    // instance.show()
-
-    // console.log(event.target.dataset.source);
 }
 
-console.log(listItems);
+let lightbox = new SimpleLightbox('.gallery a', { 
+    captionsData: "alt",
+    captionPosition: 'bottom',
+    captionDelay: 250,
+ });
 

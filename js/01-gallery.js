@@ -4,11 +4,9 @@ import { galleryItems } from './gallery-items.js';
 const listGalaryContainer = document.querySelector(".gallery");
 const listItems = createListElementsGalery(galleryItems);
 
-
 listGalaryContainer.insertAdjacentHTML("beforeend", listItems);
 
-listGalaryContainer.addEventListener("click", handleGalleryContainerClick)
-
+listGalaryContainer.addEventListener("click", handleGalleryContainerClick);
 
 function createListElementsGalery(items) {
     return items.map( ({preview, original, description}) => {
@@ -36,12 +34,12 @@ function handleGalleryContainerClick(event) {
     }
 
     const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600">`)
+    <img src="${event.target.dataset.source}" width="800" height="600">`, {
 
-    instance.show()
+    })
 
-    // console.log(event.target.dataset.source);
+    instance.show();
+
 }
 
-// console.log(listItems);
 
