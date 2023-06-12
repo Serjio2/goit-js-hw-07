@@ -44,9 +44,10 @@ function handleGalleryContainerClick(event) {
     const handleCloseButtonEsc = (event) => {
         if (event.key === "Escape")
         instance.close();
+        window.removeEventListener("keydown", handleCloseButtonEsc);
     };
 
-    document.addEventListener("keydown", handleCloseButtonEsc);
+    window.addEventListener("keydown", handleCloseButtonEsc);
 }
 
 
