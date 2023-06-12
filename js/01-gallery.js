@@ -8,6 +8,7 @@ listGalaryContainer.insertAdjacentHTML("beforeend", listItems);
 
 listGalaryContainer.addEventListener("click", handleGalleryContainerClick);
 
+
 function createListElementsGalery(items) {
     return items.map( ({preview, original, description}) => {
     return `
@@ -40,6 +41,14 @@ function handleGalleryContainerClick(event) {
 
     instance.show();
 
+    const handleCloseButtonEsc = (event) => {
+        if (event.key === "Escape")
+        instance.close();
+    };
+
+    document.addEventListener("keydown", handleCloseButtonEsc);
 }
+
+
 
 
